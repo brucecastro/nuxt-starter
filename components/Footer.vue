@@ -6,6 +6,6 @@
 
 .site-footer {
   padding: 30px 10%;
-  background-color: #bbb;
+  background-color: #888;
 }
 </style>

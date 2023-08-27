@@ -1,7 +1,8 @@
 <template>
   <section class="container">
     <h2 class="text-center">Lorem ipsum dolor sit amet consectetur</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita dolor quasi omnis perferendis, ut nulla sed itaque quis, nobis ratione eius! Sed culpa nemo iusto quae qui. Eos, consectetur sed.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <a href="#">Link example</a>. <strong>This is bold.</strong> <i>This is italic</i> Expedita dolor quasi omnis perferendis, ut nulla sed itaque quis, nobis ratione eius! Sed culpa nemo iusto quae qui. Eos, consectetur sed.</p>
+    <button>Preview</button><button class="primary">Preview</button>
     <div class="features">
       <div class="feature">
         <h3>Weekly</h3>

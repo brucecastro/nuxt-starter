@@ -4,24 +4,26 @@
     <div class="post-list">
       <article>
         <img src="https://placehold.co/250x300" title="Nice photos 1" />
-        <h3>Nice Set 1</h3>
+        <h3>Post 1</h3>
         <time datetime="2023-06-01">June 1st</time>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
       </article>
       <article class="highlight">
         <img src="https://placehold.co/250x300" title="Nice photos 2" />
-        <h3>Nice Set 2</h3>
+        <h3>Post 2</h3>
         <time datetime="2023-06-01">June 1st</time>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
       </article>
       <article>
         <img src="https://placehold.co/250x300" title="Nice photos 3" />
-        <h3>Nice Set 3</h3>
+        <h3>Post 3</h3>
         <time datetime="2023-06-01">June 1st</time>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
       </article>
     </div>
-    
+    <div class="actions">
+      <button class="primary lg">View More</button>
+    </div>
   </section>
 </template>
 

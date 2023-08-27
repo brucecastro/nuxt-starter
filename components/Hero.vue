@@ -1,6 +1,6 @@
 <template>
   <section class="container hero">
-    <h1>Welcome to this website,<br> a great place</h1>
+    <h1 class="text-special">Welcome to this website,<br> <strong>a great place</strong></h1>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cupiditate placeat dignissimos perferendis accusantium</p>
     <div class="actions">
       <button>Preview</button>
@@ -24,14 +24,37 @@ props.text
 <style>
 
 .hero {
+  color: var(--color-white);
   margin-top: 0;
-  padding: 100px 30px 80px 30px;
+  padding: 160px 30px 80px 30px;
   text-align: center;
-  background:#bbb;
-
-  .actions {
-    margin: 20px 0;
+  background: no-repeat url('~/assets/img/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  
+  h1,
+  p {
+    text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.8)
   }
+
+  h1.text-special strong {
+    text-shadow: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(1px 1px 2px rgba(1, 1, 1, 0.8));
+  }
+
+  button:not(.primary) {
+    color: var(--color-white);
+    outline-color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background: var(--color-white);
+      color: var(--color-black)
+    }
+  }
+
 }
 
 

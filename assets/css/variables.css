@@ -1,0 +1,27 @@
+:root {
+  --font-body: 'Montserrat', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-title: 'Cinzel', Helvetica, 'Times New Roman', serif;
+
+  --color-white: #fafafa;
+  --color-black: #333;
+  --color-red-wine: #931a25;
+  --color-sandstone: #ccaa45;
+
+  --color-gray-100: #f5f5f5;
+  /* --color-gray-200: #e5e5e5; */
+  /* --color-gray-300: #d4d4d4; */
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #6b7280;
+
+  --color-text: var(--color-black);
+
+  --color-primary: var(--color-red-wine);
+  --color-primary-600: #7b1019;
+  --color-primary-700: #5b1017;
+
+  --color-secondary: var(--color-sandstone);
+  /* --color-secondary-400: #dfc884; */
+  --color-secondary-700: #937a32;
+
+  --color-background-secondary: var(--color-gray-100);
+}

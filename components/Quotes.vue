@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="alt">
     <h2 class="text-center">What people are saying</h2>
     <div class="quote-list">
       <blockquote>
@@ -29,12 +29,10 @@
     flex: 0 1 auto;
     margin:20px;
     padding: 35px 25px;
-    border: 1px solid #ddd;
+    background-color: var(--color-white);
+    border-radius: 5px;
 
     .highlight {}
   }
-
-  
-
 }
 </style>

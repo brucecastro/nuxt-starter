@@ -46,7 +46,7 @@ props.text
 
   button:not(.primary) {
     color: var(--color-white);
-    outline-color: var(--color-white);
+    border-color: var(--color-white);
 
     &:hover,
     &:focus {

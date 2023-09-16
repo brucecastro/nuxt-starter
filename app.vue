@@ -11,8 +11,6 @@
 <script setup lang="ts">
 useHead({
   title: 'AH',
-  meta: [
-    { name: 'description', content: 'My amazing site' }
-  ],
-})
+  meta: [{ name: 'description', content: 'My amazing site' }],
+});
 </script>

@@ -1,16 +1,12 @@
 <template>
   <NuxtLayout>
-    <Hero />
-    <Features />
-    <Quotes />
-    <Updates />
-    <Contact />
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
+const siteMeta = useAppConfig().meta;
 useHead({
-  title: 'AH',
-  meta: [{ name: 'description', content: 'My amazing site' }],
+  title: siteMeta.title,
+  meta: [{ name: 'description', content: siteMeta.description }],
 });
 </script>

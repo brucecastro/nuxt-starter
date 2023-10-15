@@ -1,9 +1,9 @@
 <template>
-  <header class="site-header" :class="{floating: isFloating }">
-    <div class="brand">My Brand</div>
+  <header class="site-header" :class="{ floating: isFloating }">
+    <div class="brand">{{ brand }}</div>
     <div class="main-nav">
       <ul class="nav-items">
-        <li><a href="#updates">Updates</a></li>
+        <li><a href="#posts">Posts</a></li>
         <li><a href="#social">Social</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -15,7 +15,8 @@
 export default {
   data() {
     return {
-      isFloating: false
+      brand: useAppConfig().meta.title,
+      isFloating: false,
     }
   },
   methods: {

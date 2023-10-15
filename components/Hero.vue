@@ -9,18 +9,6 @@
   </section>
 </template>
 
-<script setup lang="ts">
-
-const props = defineProps({
-  title: String,
-  text: String
-})
-
-props.title
-props.text
-
-</script>
-
 <style>
 
 .hero {
@@ -56,7 +44,5 @@ props.text
   }
 
 }
-
-
 
 </style>

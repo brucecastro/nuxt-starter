@@ -13,6 +13,6 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    ['@nuxtjs/google-fonts', { families: { 'Montserrat': true, 'Cinzel': true }}]
+    ['@nuxtjs/google-fonts', { families: { 'Montserrat': true, 'Cinzel': true }}],
   ],
 })

@@ -11,29 +11,23 @@
   </header>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      brand: useAppConfig().meta.title,
-      isFloating: false,
-    }
-  },
-  methods: {
-    floatHeader() {
-      const scrollValue = window.scrollY;
-      if (this.isFloating && scrollValue === 0) {
-        this.isFloating = false;
-      } else if (scrollValue > 1) {
-        this.isFloating = true;
-      }
-    }
-  },
-  beforeMount () {
-    window.addEventListener('scroll', this.floatHeader);
-  }
+<script setup lang="ts">
 
+const brand = useAppConfig().meta.title
+const isFloating = ref(false)
+
+const floatHeader = () => {
+  const scrollValue = window.scrollY;
+  if (isFloating && scrollValue === 0) {
+    isFloating.value = false;
+  } else if (scrollValue > 1) {
+    isFloating.value = true;
+  }
 }
+
+onMounted(() => {
+  window.addEventListener('scroll', floatHeader);
+})
 </script>
 
 <style>

@@ -70,10 +70,9 @@ a {
 .text-special strong {
   font-weight: inherit;
   background: linear-gradient(
-    80deg,
-    var(--color-secondary-700),
-    var(--color-secondary) 50%,
-    var(--color-secondary-700) 100%
+    100deg,
+    var(--color-secondary),
+    var(--color-soft-green) 100%
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;

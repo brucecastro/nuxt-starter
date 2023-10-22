@@ -1,17 +1,19 @@
 <template>
-  <section class="container alt" id="social">
-    <h2 class="text-center">Social</h2>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur quia vel cupiditate reprehenderit. Quo laboriosam ea fuga ab quisquam ducimus eligendi doloremque est voluptas libero debitis provident commodi, perspiciatis temporibus.
-    </p>
-    
-    <ul class="social-icons">
-      <li v-for="network in networks">
-        <a :href="network.url" :title="network.name">
-          <i :class="network.id" aria-hidden="true">{{ network.name }}</i>
-        </a>
-      </li>
-    </ul>
+  <section class="alt" id="social">
+    <div class="container">
+      <h2 class="text-center">Social</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur quia vel cupiditate reprehenderit. Quo laboriosam ea fuga ab quisquam ducimus eligendi doloremque est voluptas libero debitis provident commodi, perspiciatis temporibus.
+      </p>
+      
+      <ul class="social-icons">
+        <li v-for="network in networks">
+          <a :href="network.url" :title="network.name">
+            <i :class="network.id" aria-hidden="true">{{ network.name }}</i>
+          </a>
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 

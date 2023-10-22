@@ -9,7 +9,7 @@
       <ul class="nav-items" @click="closeMobileMenu">
         <li><a href="#posts">Posts</a></li>
         <li><a href="#social">Social</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li v-if="contactEnabled"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -17,7 +17,9 @@
 
 <script setup lang="ts">
 
-const brand = useAppConfig().meta.title
+const config = useAppConfig()
+const brand = config.meta.title
+const contactEnabled = config.contact.enabled;
 const isFloating = ref(false)
 const isMenuOpen = ref(false)
 
@@ -220,6 +222,14 @@ body.has-overlay {
   bottom: 0;
   background-color: rgba(30, 30, 30, 0.6);
   z-index: 81;
+}
+
+}
+
+@media screen and (max-width:550px) {
+
+.main-nav {
+  width: 60%;
 }
 
 }

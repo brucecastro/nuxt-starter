@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt-starter",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -17,5 +17,6 @@
     "nuxt": "^3.6.5",
     "postcss-nested": "^6.0.1",
     "ress": "^5.0.2"
-  }
+  },
+  "dependencies": {}
 }

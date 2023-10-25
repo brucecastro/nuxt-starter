@@ -1,0 +1,102 @@
+<template>
+  <article class="post">
+    <div class="thumbnail">
+      <img :src="update.featuredImage" :title="update.title" />
+    </div>
+    <h3>{{ update.title }}</h3>
+    <time datetime="{{ update.date }}">{{ new Date(update.date).toLocaleDateString() }}</time>
+    <div class="excerpt" v-html="update.excerpt"></div>
+    <p class="view-link"><a :href="update.uri" :title="update.title">View &rsaquo;</a></p>
+  </article>
+</template>
+
+<script setup lang="ts">
+  export interface IUpdate {
+    title: string,
+    excerpt: string,
+    date: string,
+    uri: string,
+    featuredImage: string
+  }
+
+  const props = defineProps<{update: IUpdate}>();
+</script>
+
+<style>
+article.post {
+  flex: 1 0 270px;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(
+    var(--color-secondary-50),
+    var(--color-secondary-100) 80%
+  );
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  /* animation: 0.8s ease-out 0.3s forwards slideUp; */
+
+  &:hover {
+    box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15)
+  }
+
+  &:nth-of-type(2) {
+    animation-delay: 1.1s;
+  }
+  &:nth-of-type(3) {
+    animation-delay: 1.9s;
+  }
+
+
+  .thumbnail {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto 25px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  time {
+    color:#999;
+  }
+
+  p {
+    margin-top: 30px;
+    text-align: justify;
+  }
+
+  .view-link {
+    text-align: right;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:740px) {
+  article.post {
+    .thumbnail {
+      height: 450px;
+      /* max-height: 450px; */
+      min-width: 260px;
+    }
+  }
+}
+
+@media screen and (max-width:540px) {
+  article.post {
+    .thumbnail {
+      width: 90%;
+      height: 300px;
+      min-width: auto;
+    }
+  }
+}
+</style>

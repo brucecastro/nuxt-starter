@@ -17,6 +17,7 @@
   </section>
 </template>
 
+
 <script setup lang="ts">
 
 interface SocialNetwork {
@@ -25,9 +26,9 @@ interface SocialNetwork {
   url: string,
 }
 
-const socialsConfig = useAppConfig().social;
+const socialsConfig = useAppConfig().social as Record<string, string>;
 
-const networks:SocialNetwork[] = [
+const networks: SocialNetwork[] = [
     { id: 'instagram', name: 'Instagram', url: socialsConfig.instagram },
     { id: 'x', name: 'X (Formerly Twitter)', url: socialsConfig.x },
     { id: 'tiktok', name: 'TikTok', url: socialsConfig.tiktok },

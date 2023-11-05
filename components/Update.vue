@@ -1,7 +1,7 @@
 <template>
   <article class="post">
     <div class="thumbnail">
-      <img :src="update.featuredImage" :title="update.title" />
+      <img :src="update.featuredImage.sourceUrl" :title="update.title" />
     </div>
     <h3>{{ update.title }}</h3>
     <time datetime="{{ update.date }}">{{ new Date(update.date).toLocaleDateString() }}</time>
@@ -16,7 +16,10 @@
     excerpt: string,
     date: string,
     uri: string,
-    featuredImage: string
+    featuredImage: {
+      sourceUrl: string,
+      srcSet: string
+    }
   }
 
   const props = defineProps<{update: IUpdate}>();

@@ -3,7 +3,8 @@
     <div class="container-lg">
       <h2 class="text-center">Recent Updates</h2>
       <div class="post-list">
-        <Update v-for="update in data" :key="update.uri" :update="update" />
+        <pre v-if="error">There was an error fetching the updates</pre>
+        <Update v-else v-for="update in updates" :key="update.uri" :update="update" />
       </div>
       <div class="actions">
         <button class="primary lg">View More</button>
@@ -13,22 +14,26 @@
 </template>
 
 <script setup lang="ts">
-  import { IUpdate } from './Update.vue';
+
+import { IUpdate } from './Update.vue';
+
 
   interface UpdateResponse {
     data: {
       updates: {
-        nodes: Array<Omit<IUpdate, 'featuredImage'> & { featuredImage: string | { node: { srcSet: string; sourceUrl: string }}}>
+        nodes: Array<Omit<IUpdate, 'featuredImage'> 
+          & { featuredImage: { node: { srcSet: string; sourceUrl: string }}}>
       }
     },
   }
 
+  const config = useRuntimeConfig()
+
   const isUpdateResponse = function(data: any): data is UpdateResponse {
-    return data.data.updates !== undefined;
+    return data.data.updates.nodes[0].featuredImage !== undefined;
   }
 
-  // TODO: Grab URL from env/config
-  const { data, refresh, pending } = await useFetch('http://nuxtstarter.local/graphql', {
+  const { data: updates, error } = await useFetch(config.public.apiUrl , {
     method: 'get',
     query: {
       query: `
@@ -49,26 +54,37 @@
           }
       }`
     },
-    transform(data) {
+    transform(data: any) {
       if(isUpdateResponse(data)) {
-        const updates = data.data.updates.nodes;
-        
-        for (const update of updates) {
+        const updates: IUpdate[] = []
+
+        for (const update of data.data.updates.nodes) {
           if(typeof update.featuredImage == 'object' && typeof update.featuredImage.node == 'object') {
-            update.featuredImage = update.featuredImage.node.sourceUrl
-            // update.featuredImage = update.featuredImage.node.srcSet
+            updates.push({
+              title: update.title,
+              excerpt: update.excerpt,
+              date: update.date,
+              uri: update.uri,
+              featuredImage: {
+                sourceUrl: update.featuredImage.node.sourceUrl,
+                srcSet: update.featuredImage.node.srcSet
+              }
+            })
           }
         }
 
         return updates
       }
       else {
-        //TODO: handle better
-        console.log('data is not a valid UpdateResponse')
+        console.log('Data is not a valid UpdateResponse')
       }
-      
     }
   })
+
+  if(error.value) {
+    throw new Error(`Error fetching the Updates: [${error.value.statusCode}] ${error.value.statusMessage}`)
+  }
+  
   
 </script>
 

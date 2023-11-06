@@ -17,7 +17,12 @@ export default defineNuxtConfig({
       'postcss-nested': {}
     }
   },
+  image: {
+    domains: ['nuxtstarter.local'],
+    alias: { starterimg: 'http://nuxtstarter.local'}
+  },
   modules: [
     ['@nuxtjs/google-fonts', { families: { 'Montserrat': true, 'Cinzel': true }}],
+    '@nuxt/image'
   ],
 })

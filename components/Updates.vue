@@ -17,7 +17,6 @@
 
 import { IUpdate } from './Update.vue';
 
-
   interface UpdateResponse {
     data: {
       updates: {
@@ -30,7 +29,7 @@ import { IUpdate } from './Update.vue';
   const config = useRuntimeConfig()
 
   const isUpdateResponse = function(data: any): data is UpdateResponse {
-    return data.data.updates.nodes[0].featuredImage !== undefined;
+    return data.data.updates.nodes[0].featuredImage !== undefined
   }
 
   const { data: updates, error } = await useFetch(config.public.apiUrl , {
@@ -84,7 +83,7 @@ import { IUpdate } from './Update.vue';
   if(error.value) {
     throw new Error(`Error fetching the Updates: [${error.value.statusCode}] ${error.value.statusMessage}`)
   }
-  
+
   
 </script>
 

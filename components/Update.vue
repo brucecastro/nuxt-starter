@@ -1,7 +1,7 @@
 <template>
   <article class="post">
     <div class="thumbnail">
-      <img :src="update.featuredImage.sourceUrl" :title="update.title" />
+      <NuxtImg :src="update.featuredImage.sourceUrl" :title="update.title" />
     </div>
     <h3>{{ update.title }}</h3>
     <time datetime="{{ update.date }}">{{ new Date(update.date).toLocaleDateString() }}</time>

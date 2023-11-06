@@ -1,61 +1,62 @@
 # Nuxt 3 Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### A Nuxt 3 starter template built for use with Headless Wordpress
 
-## Setup
+The template uses a minimalist style, with the basic elements of a modern landing page. 
 
-Make sure to install the dependencies with yarn:
+Includes the following components:
 
-`yarn install`
+* Hero with Call to Action
+* Features
+* Quotes
+* Updates (Custom Post)
+* Social Network Links
+* Contact Form (_In Progress_)
 
-NPM and PNPM are also available.
+## Demo
 
-`npm install`
+_Coming soon..._
 
-`pnpm install`
+## Local Set Up
 
+### Wordpress
 
-## Development Server
+1. Install Wordpress. [Local](https://localwp.com/) is an easy, fast solution.
+2. Add a Custom Post Type called _Updates_ through code, or install [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/). 
+3. Enable _Show in REST API_ on the new _Updates_ Custom Post Type.
+4. Install the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+5. Add a few Updates, include a featured image on each
 
-Start the development server on `http://localhost:3000`:
+### Nuxt
+1. Install the dependencies with yarn
 
 ```bash
-# yarn
+yarn install
+```
+
+2. Set the API (Wordpress) URL in as an environment variable. Using a `.env` file works well. Example:
+
+```
+API_URL=http://nuxtstarter.local/graphql
+```
+
+
+4. Start the development server on `http://localhost:3000`:
+
+```bash
 yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
 ```
 
-## Production
+## Deployment
 
-Build the application for production:
+Cloudflare Pages is currently [set up](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nuxt-site/) to build and statically render the application with [SSG](https://nuxt.com/docs/getting-started/deployment#static-hosting), whenever new changes are pushed to this repository.
+
+To manually generate a static build for production, use:
 
 ```bash
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm run build
+yarn generate
 ```
 
-Locally preview production build:
-
-```bash
-# yarn
-yarn preview
-
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-```
+Or use `yarn build` to bundle with [SSR](https://nuxt.com/docs/getting-started/introduction#server-side-rendering)
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

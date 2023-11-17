@@ -1,7 +1,7 @@
 {
   "name": "nuxt-starter",
   "private": true,
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@4.0.2",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -19,6 +19,5 @@
     "nuxt": "^3.6.5",
     "postcss-nested": "^6.0.1",
     "ress": "^5.0.2"
-  },
-  "dependencies": {}
+  }
 }

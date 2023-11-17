@@ -2,9 +2,8 @@
   <section id="updates">
     <div class="container-lg">
       <h2 class="text-center">Recent Updates</h2>
-      <div class="post-list">
-        <pre v-if="error">There was an error fetching the updates</pre>
-        <Update v-else v-for="update in updates" :key="update.uri" :update="update" />
+      <div v-if="!error" class="post-list">
+        <Update v-for="update in updates" :key="update.uri" :update="update" />
       </div>
       <div class="actions">
         <button class="primary lg">View More</button>
@@ -15,7 +14,7 @@
 
 <script setup lang="ts">
 
-import { IUpdate } from './Update.vue';
+import { type IUpdate } from './Update.vue';
 
   interface UpdateResponse {
     data: {
@@ -79,12 +78,11 @@ import { IUpdate } from './Update.vue';
       }
     }
   })
-
-  if(error.value) {
-    throw new Error(`Error fetching the Updates: [${error.value.statusCode}] ${error.value.statusMessage}`)
+  
+  if(error.value || !config.public.apiUrl) {
+    console.log('Could not fetch updates');
   }
 
-  
 </script>
 
 <style>

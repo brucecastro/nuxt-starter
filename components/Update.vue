@@ -6,7 +6,9 @@
     <h3>{{ update.title }}</h3>
     <time datetime="{{ update.date }}">{{ new Date(update.date).toLocaleDateString() }}</time>
     <div class="excerpt" v-html="update.excerpt"></div>
-    <p class="view-link"><a :href="update.uri" :title="update.title">View &rsaquo;</a></p>
+    <p class="view-link" v-if="update.updateLinks.primary">
+      <a :href="update.updateLinks.primary" :title="update.title"><span>View &rsaquo;</span></a>
+    </p>
   </article>
 </template>
 
@@ -19,16 +21,23 @@
     featuredImage: {
       sourceUrl: string,
       srcSet: string
+    },
+    updateLinks: {
+      primary: string,
+      secondary: string
     }
+
   }
 
-  const props = defineProps<{update: IUpdate}>();
+  defineProps<{ update: IUpdate }>();
+
 </script>
 
 <style>
 article.post {
   flex: 1 0 270px;
-  padding: 30px;
+  position: relative;
+  padding: 30px 30px 60px;
   text-align: center;
   background: linear-gradient(
     var(--color-secondary-50),
@@ -78,6 +87,20 @@ article.post {
   }
 
   .view-link {
+    a {
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+      display: block;
+
+      span {
+        position: absolute;
+        bottom: 25px;
+        right: 30px;
+      }
+    }
     text-align: right;
     margin: 0;
   }

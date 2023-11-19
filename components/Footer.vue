@@ -4,8 +4,7 @@
       <div class="left">Copyright &copy; 2023 {{ brand }}. All rights reserved.</div>
       <div class="links">
         <ul>
-          <li><a href="#terms">Terms and Policy</a></li>
-          <li><a href="#dislcaimer">Disclaimer</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
         </ul>
       </div>
     </div>

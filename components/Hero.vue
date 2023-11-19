@@ -4,12 +4,21 @@
       <h1 class="text-special">Welcome to this website,<br> <strong>a great place</strong></h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cupiditate placeat dignissimos perferendis accusantium</p>
       <div class="actions">
-        <button>Preview</button>
-        <button class="primary">Subscribe Now</button>
+        <a href="#posts" class="btn" @click="btnClick('secondary')">Preview</a>
+        <a :href="links.primary" class="btn primary" @click="btnClick()">Subscribe Now</a>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+
+const links = useAppConfig().links;
+
+const btnClick = (type = 'primary') => {
+  console.log('clicked: ', type);
+}
+</script>
 
 <style>
 
@@ -34,7 +43,11 @@
     filter: drop-shadow(1px 1px 2px rgba(1, 1, 1, 0.8));
   }
 
-  button:not(.primary) {
+  .btn {
+    display: inline-block;
+  }
+
+  .btn:not(.primary) {
     color: var(--color-white);
     border-color: var(--color-white);
 

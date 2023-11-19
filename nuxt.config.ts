@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     }
   },
   image: {
-    domains: ['nuxtstarter.local'],
+    domains: ['nuxtstarter.local', 'nuxtstarter.brucecastro.dev'],
     alias: { starterimg: 'http://nuxtstarter.local'}
   },
   modules: [

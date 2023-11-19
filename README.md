@@ -1,10 +1,12 @@
 # Nuxt 3 Starter
 
-### A Nuxt 3 starter template built for use with Headless Wordpress
+### A Nuxt 3 starter template with a Wordpress backend
 
-The template uses a minimalist style, with the basic elements of a modern landing page. 
+This app is a work in progress to explore a headless Wordpress architecture using Nuxt 3 in SSG mode, and deploying to Cloudflare Pages.
 
-Includes the following components:
+The template implements the basic elements of a modern landing page, with a minimalist style. 
+
+The following components are included:
 
 * Hero with Call to Action
 * Features
@@ -15,7 +17,7 @@ Includes the following components:
 
 ## Demo
 
-_Coming soon..._
+The demo is available at https://nuxtstarter.pages.dev
 
 ## Local Set Up
 
@@ -25,7 +27,7 @@ _Coming soon..._
 2. Add a Custom Post Type called _Updates_ through code, or install [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/). 
 3. Enable _Show in REST API_ on the new _Updates_ Custom Post Type.
 4. Install the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
-5. Add a few Updates, include a featured image on each
+5. Add a few Updates, make sure to set a featured image on each one.
 
 ### Nuxt
 1. Install the dependencies with yarn
@@ -34,7 +36,7 @@ _Coming soon..._
 yarn install
 ```
 
-2. Set the API (Wordpress) URL in as an environment variable. Using a `.env` file works well. Example:
+2. Set the API_URL environment variable pointing to the Wordpress GraphQL endpoint. An `.env` file will work locally. Example:
 
 ```
 API_URL=http://nuxtstarter.local/graphql
@@ -49,7 +51,7 @@ yarn dev
 
 ## Deployment
 
-Cloudflare Pages is currently [set up](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nuxt-site/) to build and statically render the application with [SSG](https://nuxt.com/docs/getting-started/deployment#static-hosting), whenever new changes are pushed to this repository.
+Cloudflare Pages is currently [set up](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nuxt-site/) on this repository. Pushing to the branches `main`, `stage`, and `dev` generates a [static](https://nuxt.com/docs/getting-started/deployment#static-hosting) build and publishes the app to production.
 
 To manually generate a static build for production, use:
 
@@ -59,4 +61,4 @@ yarn generate
 
 Or use `yarn build` to bundle with [SSR](https://nuxt.com/docs/getting-started/introduction#server-side-rendering)
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+See out the [official deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

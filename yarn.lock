@@ -7428,7 +7428,6 @@ __metadata:
     eslint: "npm:^8.45.0"
     nuxt: "npm:^3.6.5"
     postcss-nested: "npm:^6.0.1"
-    ress: "npm:^5.0.2"
   languageName: unknown
   linkType: soft
 
@@ -8691,13 +8690,6 @@ __metadata:
   bin:
     resolve: bin/resolve
   checksum: 0446f024439cd2e50c6c8fa8ba77eaa8370b4180f401a96abf3d1ebc770ac51c1955e12764cde449fde3fff480a61f84388e3505ecdbab778f4bef5f8212c729
-  languageName: node
-  linkType: hard
-
-"ress@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "ress@npm:5.0.2"
-  checksum: f8ae4e461e84f9cf52af7800ec5b1230e31a520cfc6e3d9f2fc82ac1ff79d1e865d7465a56b00dc05073f85b330bf6b25434f9972a5489c9e98c57d85eeda3a5
   languageName: node
   linkType: hard
 

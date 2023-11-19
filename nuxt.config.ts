@@ -7,10 +7,10 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   css: [
-    'ress',
-    '~/assets/css/variables.css',
-    '~/assets/css/animations.css',
-    '~/assets/css/main.css'
+    '@/assets/css/ress.min.css',
+    '@/assets/css/variables.css',
+    '@/assets/css/animations.css',
+    '@/assets/css/main.css',
   ],
   postcss: {
     plugins: {

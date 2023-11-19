@@ -3,22 +3,18 @@
     <div class="container-lg">
       <h2 class="text-center">What people are saying</h2>
       <div class="quote-list">
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
-          <cite>&mdash; Cool Person</cite>
-        </blockquote>
-        <blockquote class="highlight">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
-          <cite>&mdash; Cool Person</cite>
-        </blockquote>
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur</p>
-          <cite>&mdash; Cool Person</cite>
+        <blockquote v-for="quote in quotes">
+          <p>{{ quote.text }}</p>
+          <cite>&mdash; {{ quote.cite }}</cite>
         </blockquote>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { quotes } = await queryContent('_home').where({ _partial: true, quotes: { $exists: true } }).findOne();
+</script>
 
 <style>
 .quote-list {

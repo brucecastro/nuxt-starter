@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   },
   modules: [
     ['@nuxtjs/google-fonts', { families: { 'Montserrat': true, 'Cinzel': true }}],
-    '@nuxt/image'
+    '@nuxt/image',
+    "@nuxt/content"
   ],
 })

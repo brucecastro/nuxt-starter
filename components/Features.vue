@@ -1,28 +1,23 @@
 <template>
   <section class="">
     <div class="container">
-      <h2 class="text-center">Lorem ipsum dolor sit amet consectetur</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <a href="#">Link example</a>. <strong>This is bold.</strong> <i>This is italic.</i> Expedita dolor quasi omnis perferendis, ut nulla sed itaque quis, nobis ratione eius! Sed culpa nemo iusto quae qui. Eos, consectetur sed.</p>
+      <h2 class="text-center">{{ title }}</h2>
+      <p>{{ description }}</p>
       <div class="features">
-        <div class="feature">
-          <h3>Professional</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur,</p>
-        </div>
-        <div class="feature">
-          <h3>High Quality</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur,</p>
-        </div>
-        <div class="feature">
-          <h3>Fast</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corporis tempora laborum atque, consectetur,</p>
+        <div v-for="feature in features" class="feature">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.desc }}</p>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<style>
+<script setup lang="ts">
+const { title, description, features } = await queryContent('_home').where({ _partial: true, features: { $exists: true } }).findOne();
+</script>
 
+<style>
 .features {
   display: flex;
   justify-content: space-between;

@@ -13,7 +13,11 @@
 </template>
 
 <script setup lang="ts">
-const { quotes } = await queryContent('_home').where({ _partial: true, quotes: { $exists: true } }).findOne();
+const { quotes } = await queryContent('_home')
+    .where({ 
+      _partial: true, 
+      _path: '/_home/quotes' })
+    .findOne();
 </script>
 
 <style>

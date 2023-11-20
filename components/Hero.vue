@@ -1,11 +1,11 @@
 <template>
   <section class="hero">
     <div class="container">
-      <h1 class="text-special">Welcome to this website,<br> <strong>a great place</strong></h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cupiditate placeat dignissimos perferendis accusantium</p>
+      <h1 class="text-special">{{ title }}<br/><strong>{{ title_decorated }}</strong></h1>
+      <p>{{ description }}</p>
       <div class="actions">
-        <a href="#posts" class="btn">Preview</a>
-        <a :href="links.primary" class="btn primary">Subscribe Now</a>
+        <a href="#posts" class="btn">{{ btn_secondary }}</a>
+        <a :href="links.primary" class="btn primary">{{ btn_primary }}</a>
       </div>
     </div>
   </section>
@@ -13,6 +13,17 @@
 
 <script setup lang="ts">
 const links = useAppConfig().links;
+
+const { 
+  title,
+  title_decorated,
+  description, 
+  btn_primary,
+  btn_secondary } = await queryContent('_home')
+    .where({ 
+      _partial: true,
+      _path: '/_home/hero' })
+    .findOne();
 </script>
 
 <style>

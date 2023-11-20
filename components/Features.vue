@@ -14,7 +14,14 @@
 </template>
 
 <script setup lang="ts">
-const { title, description, features } = await queryContent('_home').where({ _partial: true, features: { $exists: true } }).findOne();
+const { 
+  title, 
+  description, 
+  features } = await queryContent('_home')
+    .where({ 
+      _partial: true, 
+      _path: '/_home/features' })
+    .findOne();
 </script>
 
 <style>

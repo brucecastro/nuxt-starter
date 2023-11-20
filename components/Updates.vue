@@ -1,20 +1,26 @@
 <template>
   <section id="posts">
     <div class="container-lg">
-      <h2 class="text-center">Recent Posts</h2>
-      <div v-if="!error" class="post-list">
-        <Update v-for="post in posts" :key="post.uri" :update="post" />
-      </div>
-      <div class="actions">
-        <a :href="links.primary" class="btn primary lg">View More</a>
-      </div>
+      <template v-if="!error">
+        <h2 class="text-center">Recent Posts</h2>
+        <div class="post-list">
+          <Update v-for="post in posts" :key="post.uri" :update="post" />
+        </div>
+        <div class="actions">
+          <a :href="links.primary" class="btn primary lg">View More</a>
+        </div>
+      </template>
+      <template v-else>
+        <div class="actions">
+          <a :href="links.primary" class="btn primary lg">View Posts</a>
+        </div>
+      </template>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { type IUpdate } from './Update.vue';
-
 
 interface UpdateResponse {
   data: {
@@ -27,6 +33,7 @@ interface UpdateResponse {
     }
   }
 }
+
 const links = useAppConfig().links;
 const config = useRuntimeConfig()
 

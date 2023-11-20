@@ -24,10 +24,10 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
   image: {
-    domains: ['nuxtstarter.local', 'nuxtstarter.brucecastro.dev'],
+    domains: ['nuxtstarter.brucecastro.dev', 'nuxtstarter.local'],
     alias: { 
+      img_prod: 'https://nuxtstarter.brucecastro.dev',
       img_local: 'http://nuxtstarter.local',
-      img_prod: 'https://nuxtstarter.brucecastro.dev'
     }
   },
   gtag: {

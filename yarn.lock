@@ -1427,7 +1427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.8.1, @nuxt/kit@npm:^3.8.0, @nuxt/kit@npm:^3.8.1":
+"@nuxt/kit@npm:3.8.1, @nuxt/kit@npm:^3.7.1, @nuxt/kit@npm:^3.8.0, @nuxt/kit@npm:^3.8.1":
   version: 3.8.1
   resolution: "@nuxt/kit@npm:3.8.1"
   dependencies:
@@ -9153,6 +9153,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nuxt-gtag@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "nuxt-gtag@npm:1.1.1"
+  dependencies:
+    "@nuxt/kit": "npm:^3.7.1"
+    defu: "npm:^6.1.2"
+    pathe: "npm:^1.1.1"
+  checksum: 245cad3a2a86adadfcf479bea0ce31aba7dc6597bd2899c9c9137a71c28451aa0cf38faf5c3d7748c913d1ba9b87eed6e7ffa77b3be221b0a6d74a5be5d4ea9e
+  languageName: node
+  linkType: hard
+
 "nuxt-starter@workspace:.":
   version: 0.0.0-use.local
   resolution: "nuxt-starter@workspace:."
@@ -9165,6 +9176,7 @@ __metadata:
     "@types/node": "npm:^18.17.0"
     eslint: "npm:^8.45.0"
     nuxt: "npm:^3.6.5"
+    nuxt-gtag: "npm:^1.1.1"
     postcss-nested: "npm:^6.0.1"
   languageName: unknown
   linkType: soft

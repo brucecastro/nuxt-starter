@@ -4,20 +4,15 @@
       <h1 class="text-special">Welcome to this website,<br> <strong>a great place</strong></h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam cupiditate placeat dignissimos perferendis accusantium</p>
       <div class="actions">
-        <a href="#posts" class="btn" @click="btnClick('secondary')">Preview</a>
-        <a :href="links.primary" class="btn primary" @click="btnClick()">Subscribe Now</a>
+        <a href="#posts" class="btn">Preview</a>
+        <a :href="links.primary" class="btn primary">Subscribe Now</a>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-
 const links = useAppConfig().links;
-
-const btnClick = (type = 'primary') => {
-  console.log('clicked: ', type);
-}
 </script>
 
 <style>

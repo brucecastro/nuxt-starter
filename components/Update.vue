@@ -4,7 +4,7 @@
       <NuxtImg :src="update.featuredImage.sourceUrl" :title="update.title" />
     </div>
     <h3>{{ update.title }}</h3>
-    <time datetime="{{ update.date }}">{{ new Date(update.date).toLocaleDateString() }}</time>
+    <time :datetime="update.date">{{ new Date(update.date).toLocaleDateString() }}</time>
     <div class="excerpt" v-html="update.excerpt"></div>
     <p class="view-link" v-if="update.updateLinks.primary">
       <a :href="update.updateLinks.primary" :title="update.title"><span>View &rsaquo;</span></a>

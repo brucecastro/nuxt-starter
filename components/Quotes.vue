@@ -1,7 +1,7 @@
 <template>
   <section class="alt">
     <div class="container-lg">
-      <h2 class="text-center">What people are saying</h2>
+      <h2 class="text-center">{{ title }}</h2>
       <div class="quote-list">
         <blockquote v-for="quote in quotes">
           <p>{{ quote.text }}</p>
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-const { quotes } = await queryContent('_home')
+const { title, quotes } = await queryContent('_home')
     .where({ 
       _partial: true, 
       _path: '/_home/quotes' })
